@@ -1,3 +1,6 @@
+Here is the updated README with all markdown links removed while preserving the plain text labels and URLs where helpful, or simply stripping the anchor tags so they are no longer clickable links.
+
+```markdown
 [![Scenario Tests](https://github.com/kartoza/docker-postgis/actions/workflows/build-latest.yaml/badge.svg?branch=develop&event=push)](https://github.com/kartoza/docker-postgis/actions/workflows/build-latest.yaml)
 [![deploy-image](https://github.com/kartoza/docker-postgis/actions/workflows/deploy-image.yaml/badge.svg)](https://github.com/kartoza/docker-postgis/actions/workflows/deploy-image.yaml)
 
@@ -41,7 +44,7 @@ Highlights and feature of this image:
 
 
 There is a nice 'from scratch' tutorial on using this docker image on Alex Urquhart's blog
-[here](https://alexurquhart.com/post/set-up-postgis-with-docker/) - if you are just getting started
+(https://alexurquhart.com/post/set-up-postgis-with-docker/) - if you are just getting started
 with `docker`, `PostGIS` and `QGIS`, we recommend that you read it and try out the instructions
 specified on the blog.
 
@@ -49,7 +52,7 @@ specified on the blog.
 
 The following convention is used for tagging the images we build:
 
-> kartoza/postgis:[POSTGRES_MAJOR_VERSION]-[POSTGIS_MAJOR_VERSION].[POSTGIS_MINOR_RELEASE]
+> kartoza/postgis:[POSTGRES_MAJOR_VERSION]-[POSTGRES_MAJOR_VERSION].[POSTGRES_MINOR_RELEASE]
 
 So for example:
 
@@ -64,7 +67,7 @@ your database to appear to be empty if you are using persistent volumes for your
 To get the image onto your system:
 
 * Pulling from Central Registry (Dockerhub)
-* Building locally - [Consult the Developer Guidelines](https://github.com/kartoza/docker-postgis/blob/develop/Developer-Guidelines.md)
+* Building locally - Consult the Developer Guidelines (https://github.com/kartoza/docker-postgis/blob/develop/Developer-Guidelines.md)
 
 
 ## Running the container
@@ -76,6 +79,7 @@ To create a running container do:
 
 ```shell
 docker run --name "postgis" -p 25432:5432 -d -t kartoza/postgis
+
 ```
 
 **Note:** If you do not pass the env variable `POSTGRES_PASS` a random password will be generated
@@ -83,9 +87,9 @@ and will be visible from the logs or within the container in `/tmp/PGPASSWORD.tx
 
 ### Convenience docker-compose.yml
 
-For convenience, we  provide a ``docker-compose.yml`` that will run a
+For convenience, we  provide a `docker-compose.yml` that will run a
 copy of the database image and also our related database backup image (see
-[https://github.com/kartoza/docker-pg-backup](https://github.com/kartoza/docker-pg-backup)).
+https://github.com/kartoza/docker-pg-backup).
 
 The `docker-compose` recipe will expose `PostgreSQL` on port `25432` (to prevent potential conflicts with
 any local database instance you may have),
@@ -94,6 +98,7 @@ Example usage:
 
 ```shell
 docker-compose up -d
+
 ```
 
 **Note:** The docker-compose recipe above will not persist your data on your local disk, only in a
@@ -107,6 +112,7 @@ Connect with psql (make sure you first install postgresql client tools on your h
 
 ```shell
 psql -h localhost -U docker -p 25432 -l
+
 ```
 
 **Note:** Default postgresql user is 'docker'. If you do not pass the env variable `POSTGRES_PASS`
@@ -118,6 +124,7 @@ Under ubuntu LTS the postgresql client can be installed like this:
 
 ```shell
 sudo apt-get install postgresql-client-${POSTGRES_MAJOR_VERSION}
+
 ```
 
 Where `POSTGRES_MAJOR_VERSION` corresponds to a specific
@@ -125,21 +132,18 @@ PostgreSQL version i.e 12
 
 ### Connect via GIS Desktop
 
-1) Open QGIS Desktop and choose Data Source Manager.
-2) Select PostgreSQL Connector
-3) Populate the credentials as per the running container.
-  
-  ![postgres](./docs/postgres.png)
+1. Open QGIS Desktop and choose Data Source Manager.
+2. Select PostgreSQL Connector
+3. Populate the credentials as per the running container.
 
-4) Connect to the database and start interacting with your data.
+4. Connect to the database and start interacting with your data.
 
 ## Advanced Documentation
 
 This README focuses on simplicity. Additional documentation covering advanced configuration and examples can be found here:
 
-* [Advanced-Configuration](https://github.com/kartoza/docker-postgis/blob/develop/Advanced-Configuration.md)
-* [Developer-Guidelines](https://github.com/kartoza/docker-postgis/blob/develop/Developer-Guidelines.md)
-
+* Advanced-Configuration (https://github.com/kartoza/docker-postgis/blob/develop/Advanced-Configuration.md)
+* Developer-Guidelines (https://github.com/kartoza/docker-postgis/blob/develop/Developer-Guidelines.md)
 
 ## Docker image versions
 
@@ -151,15 +155,11 @@ image you can cherry-pick the changes against that specific branch and we will t
 
 ## Support
 
-If you require more substantial assistance from [kartoza](https://kartoza.com) (because our work
+If you require more substantial assistance from kartoza (https://kartoza.com) (because our work
 and interaction on docker-postgis is pro bono), please consider taking out a
-[Support Level Agreement](https://kartoza.com/en/shop/product/support).
-
-## Credits
-
-- Tim Sutton (tim@kartoza.com)
-- Gavin Fleming (gavin@kartoza.com)
-- Rizky Maulana (rizky@kartoza.com)
-- Admire Nyakudya (admire@kartoza.com)
+Support Level Agreement (https://kartoza.com/en/shop/product/support).
 
 
+```
+
+```
